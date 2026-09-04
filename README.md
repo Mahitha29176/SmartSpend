@@ -207,3 +207,20 @@ The app runs at `http://localhost:5173`. Register a new account and start adding
 - Server-side pagination for very large expense histories
 - Email reminders for upcoming recurring expenses
 - Editable profile (name/password change)
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](./screenshots/Dashboard.png)
+
+### Expenses
+![Expenses](./screenshots/Expenses.png)
+
+### Budgets
+![Budgets](./screenshots/Budgets.png)
+
+### Recurring Expenses
+![Recurring Expenses](./screenshots/Recurring%20Expenses.png)
+
+### Profile
+![Profile](./screenshots/Profile.png)
