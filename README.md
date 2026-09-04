@@ -1,27 +1,63 @@
-# SmartSpend — Personal Expense Tracker
+# SmartSpend – Personal Expense Tracker
 
-A full-stack personal finance web app: React (Vite) on the frontend, an Express REST API on the backend, and MySQL for storage. No MongoDB, no Firebase, no third-party finance APIs, no AI APIs — every calculation is plain SQL/JS.
+A responsive personal expense tracking web application built with
+React and Vite, featuring an intuitive dashboard, expense management,
+budget tracking, recurring expenses, filtering, and spending insights.
 
-```
+The application uses React for the frontend and communicates with a
+REST API for data management.
 React Frontend  →  Express REST API  →  MySQL Database
 ```
+## 🛠️ Tech Stack
 
-## Features
+### Frontend
+- React 18
+- React Router
+- Vite
+- Axios
+- CSS3
+- Responsive UI
+- Component-based architecture
 
-- **Authentication** — register/login/logout, bcrypt-hashed passwords, JWT-protected routes, each user scoped strictly to their own data
-- **Expense management** — add, edit, delete, search, filter (category, payment method, date range, amount range, description), sort by date or amount
-- **Dashboard** — total / this-month / today / average-daily summary cards, spending-by-category and monthly-spending breakdowns, recent transactions
-- **Budgets** — set a monthly budget per category, see spent/remaining/percent-used, get a warning at 80%+ usage
-- **Recurring expenses** — rent, bills, subscriptions; the backend automatically logs them as real expenses and rolls the due date forward
-- **Spending insights** — month-over-month comparisons, highest category, average daily spend — all computed with SQL aggregates, no AI involved
+### Backend
+- Node.js
+- Express.js
+- REST API
+- JWT Authentication
+- bcrypt
 
-## Tech stack
+### Database
+- MySQL
+- mysql2
+- Parameterized SQL queries
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 18, React Router, Axios, Vite, plain CSS3 (no UI framework) |
-| Backend | Node.js, Express.js, JWT, bcrypt |
-| Database | MySQL (mysql2, parameterized queries) |
+## ✨ Features
+
+- 🔐 User registration and login
+- 📊 Interactive financial dashboard
+- 💰 Add, edit and delete expenses
+- 🔎 Search and filter expenses
+- 📅 Filter expenses by date range
+- 🏷️ Filter by category and payment method
+- 💵 Budget creation and tracking
+- ⚠️ Budget usage warnings
+- 🔄 Recurring expense management
+- 📈 Monthly and category-wise spending insights
+- 📱 Responsive and user-friendly interface
+
+## 🎨 Frontend Highlights
+
+- Built reusable React components for expenses, budgets,
+  dashboard cards, sidebar and forms.
+- Used React Router for client-side navigation.
+- Used Axios for REST API communication.
+- Implemented protected routes for authenticated pages.
+- Managed authentication state using React Context.
+- Created reusable forms with validation and error handling.
+- Implemented search, filtering and sorting on expense data.
+- Designed responsive layouts using CSS.
+- Organized the frontend into components, pages, layouts,
+  services, context and utility modules.
 
 ## Architecture
 
@@ -147,13 +183,15 @@ The app runs at `http://localhost:5173`. Register a new account and start adding
 |---|---|
 | `VITE_API_URL` | Base URL of the backend API |
 
-## Security notes
 
-- Passwords are hashed with bcrypt (10 salt rounds) — never stored or returned in plaintext
-- All SQL is parameterized (`mysql2` placeholders) — no string-concatenated queries anywhere, so it's not vulnerable to SQL injection
-- JWT is verified on every protected route; `user_id` for data access always comes from the token, never from the client-supplied body
-- `.env` files are gitignored; `.env.example` documents required variables without real secrets
+## 🔒 Security
 
+- Passwords are hashed using bcrypt.
+- JWT authentication protects private routes.
+- API requests use parameterized SQL queries.
+- User data is scoped to the authenticated user.
+- Environment files containing secrets are excluded from Git.
+  
 ## Testing checklist
 
 **Auth** — register, login, invalid login, logout, hitting a protected route without a token
